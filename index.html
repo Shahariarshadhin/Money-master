@@ -19,18 +19,18 @@
 
 
 
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <h1 class="title mb-4">Pocket Cost</h1>
 
-        <div class="d-flex justify-content-around">
-            <div>
-                <img src="images/money.png" alt="">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-sm-10 d-flex align-items-center">
+                <img class="img-fluid p-5" src="images/money.png" alt="">
             </div>
 
             <!--Income Section-->
 
 
-            <div class="calculation-section">
+            <div class="calculation-section  col-lg-5 col-sm-8 g-sm-5 g-lg-0 p-5">
                 <h3 class="text-center mb-3 ">Income</h3>
 
                 <div class="row mb-3">
@@ -87,8 +87,9 @@
                 <!-- calculation Section-->
 
                 <div class=" mb-3 text-center">
+                    <h4 class="mb-4">Income : <span id="main-income">00</span></h4>
                     <h4 class="mb-4">Total Expenses : <span id="total-expenses">00</span></h4>
-                    <h4 class="mb-5">Balance : 5500</h4>
+                    <h4 class="mb-5">Balance : <span id="balance-field">00</span></h4>
                 </div>
 
 
@@ -113,8 +114,8 @@
 
 
                 <div class="text-center">
-                    <h4 class="mb-3">Saving Amount : 5500</h4>
-                    <h4>Remaining Balance : 5500</h4>
+                    <h4 class="mb-3">Saving Amount :<span id="saving">00</span></h4>
+                    <h4>Remaining Balance : <span id="rest-balance">00</span></h4>
                 </div>
 
 
