@@ -26,6 +26,7 @@ document.getElementById('calculate-btn').addEventListener('click', function() {
     }
 
 
+
     // get total expense
 
     const mianIncome = document.getElementById('main-income');
@@ -46,7 +47,7 @@ document.getElementById('calculate-btn').addEventListener('click', function() {
 
     const balance = document.getElementById('balance-field');
     const balanceText = balance.innerText;
-    const balanceAmount = parseFloat(balanceText);
+    // const balanceAmount = parseFloat(balanceText);
 
     if (totalExpense.innerText > incomeAmount) {
         alert('You are running out of money');
@@ -57,7 +58,7 @@ document.getElementById('calculate-btn').addEventListener('click', function() {
 
 });
 
-
+// saving Section
 
 function updateNumber(inputId) {
     const ampuntInput = document.getElementById(inputId);
@@ -80,6 +81,43 @@ document.getElementById('save-btn').addEventListener('click', function() {
     const totalSaving = (incomeAmount * SavePersent) / 100;
 
     document.getElementById('saving').innerText = totalSaving;
+
+
+    // remainingg balance
+    const foodExpenseAmount = updateNumber('food');
+    const rentExpenseAmount = updateNumber('rent');
+    const clothesExpenseAmount = updateNumber('clothes');
+
+
+    if (foodExpenseAmount < 0 || rentExpenseAmount < 0 || clothesExpenseAmount < 0) {
+
+        alert('please add Positive number');
+    }
+
+
+
+    const totalExpense = document.getElementById('total-expenses');
+    const totalExpenseText = totalExpense.innerText;
+    const totalExpenseAmount = parseFloat(totalExpenseText);
+
+    totalExpense.innerText = foodExpenseAmount + rentExpenseAmount + clothesExpenseAmount;
+
+
+    const balance = document.getElementById('balance-field');
+    const balanceText = balance.innerText;
+    const balanceAmount = parseFloat(balanceText);
+
+    if (totalExpense.innerText > incomeAmount) {
+        alert('You are running out of money');
+    } else {
+        balance.innerText = incomeAmount - totalExpense.innerText;
+    }
+    const remainingBalance = balance.innerText - totalSaving;
+
+    document.getElementById('saving').innerText = totalSaving;
+    document.getElementById('rest-balance').innerText = remainingBalance;
+
+
 
 
 
